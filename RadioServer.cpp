@@ -11,11 +11,12 @@
 #include <thread>
 #include <poll.h>
 #include <vector>
-
 /*
 narazie serwer tylko przyjmuje wiadomosci i je wypisuje, ale robi to juz w miare wspolbieznie, wiec gicior, to jest poczatek do dostawania requestow od klienta
 */
 
+
+char rooms[255] = "gierki, shitpost, general";
 
 std::vector<pollfd> descr;
 
@@ -39,6 +40,7 @@ void server(int revents, int servFd){
         tmp.events = POLLIN|POLLRDHUP;
         descr.push_back(tmp);
         printf("new connection from: %s:%hu (fd: %d)\n", inet_ntoa(clientAddr.sin_addr), ntohs(clientAddr.sin_port), clientFd);
+        write(clientFd, rooms, 255);
     }
 }
 //obsluga fd klientow
@@ -67,7 +69,7 @@ void client(int indexInDescr) {
 
 int main(int argc, char ** argv) {
     
-    long port = 12346;
+    long port = 12345;
     
     sockaddr_in myAddr {};
     myAddr.sin_family = AF_INET;
