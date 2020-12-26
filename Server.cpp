@@ -1,0 +1,1 @@
+//jeszcze ni uzywane, ale bedzie potrzebne w obiektowosci
