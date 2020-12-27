@@ -9,12 +9,22 @@
 #include <arpa/inet.h>
 #include <iostream>
 #include <thread>
-#include<vector>
+#include <poll.h>
+#include <vector>
 
 //jeszcze ni uzywane, ale bedzie potrzebne w obiektowosci
 
 class Server{
 private:
-    std::vector<int> fds;
+    long port;
+    std::vector<pollfd> descr;
+    char rooms[255] = "gierki, shitpost, general";
+    sockaddr_in myAddr {};
+    int tcpfd, udpfd;
+    void pollServer(int revents);
+    void pollClient(int index);
+public:
+    Server(long p);
+    void start();
     
 };

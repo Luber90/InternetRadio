@@ -1,0 +1,14 @@
+#include <sys/socket.h>
+#include <arpa/inet.h>
+
+class KlientInfo{
+private:
+    int fd;
+    sockaddr_in clientAddr{};
+    socklen_t clientAddrSize = sizeof(clientAddr);
+public:
+    KlientInfo(int f, sockaddr_in c);
+    int getFd();
+    sockaddr_in getAddr();
+    socklen_t getSize();
+};
