@@ -11,6 +11,9 @@
 #include <thread>
 #include <poll.h>
 #include <vector>
+#include <string.h>
+#include "KlientInfo.h"
+#include "RoomInfo.h"
 
 //jeszcze ni uzywane, ale bedzie potrzebne w obiektowosci
 
@@ -18,11 +21,14 @@ class Server{
 private:
     long port;
     std::vector<pollfd> descr;
-    char rooms[255] = "gierki, shitpost, general";
+    char roomss[255] = "rooms:gierki,shitpost,general";
     sockaddr_in myAddr {};
     int tcpfd, udpfd;
+    std::vector<KlientInfo*> clients;
+    std::vector<RoomInfo*> rooms;
     void pollServer(int revents);
     void pollClient(int index);
+    void sendMusic(sockaddr_in* ad, std::string name);
 public:
     Server(long p);
     void start();

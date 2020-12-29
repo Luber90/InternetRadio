@@ -1,8 +1,9 @@
 #include "Server.h"
 
-//jeszcze ni uzywane, ale bedzie potrzebne w obiektowosci
-
 Server::Server(long p){
+    rooms.push_back(new RoomInfo("gierki"));
+    rooms.push_back(new RoomInfo("shitpost"));
+    rooms.push_back(new RoomInfo("general"));
     port = p;
     myAddr.sin_family = AF_INET;
     myAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
@@ -35,7 +36,7 @@ Server::Server(long p){
 
 void Server::start(){
     while(true){
-        int ready = poll(descr.data(), descr.size(), -1);
+        int ready = poll(descr.data(), descr.size(), 1);
             if(ready == -1){
                 std::cout << "poll error"<<std::endl;
                 exit(-1);
@@ -47,6 +48,15 @@ void Server::start(){
                     else
                         this->pollClient(i);
                     ready--;
+            }
+        }
+        for(long unsigned int i = 0; i < clients.size(); i++){
+            for(long unsigned int j = 0; i < rooms.size(); j++){
+                for(long unsigned int k = 0; k < rooms[j]->getFds().size(); k++){
+                    if(rooms[j]->getFds()[k]==clients[i]->getFd()){
+                        this->sendMusic(clients[i]->getAddr(), rooms[j]->getName());
+                    }
+                }
             }
         }
     }
@@ -71,10 +81,16 @@ void Server::pollServer(int revents){
         tmp.events = POLLIN|POLLRDHUP;
         descr.push_back(tmp);
         printf("new connection from: %s:%hu (fd: %d)\n", inet_ntoa(clientAddr.sin_addr), ntohs(clientAddr.sin_port), clientFd);
+        clients.push_back(new KlientInfo(clientFd, clientAddr));
         //zwraca do klienta pokoje, to jest mega prowizorka i bedzie zmienione
-        char text[255] = "test"; 
-        sendto(udpfd, text, 255, 0, (sockaddr*) &clientAddr,  clientAddrSize);
-        write(clientFd, rooms, 255);
+        std::string ro = "rooms:";
+        for (long unsigned int i = 0; i < rooms.size(); i++){
+            ro = ro + rooms[i]->getName();
+            if(i != rooms.size()-1){
+                ro = ro+",";
+            }
+        }
+        write(clientFd, ro.c_str(), 255);
     }
 }
 
@@ -95,9 +111,18 @@ void Server::pollClient(int index){
     //wyrzucanie nieuzywanych kleintow
     if(revents & ~POLLIN){
         printf("removing %d\n", clientFd);
+        for (long unsigned int i=0; i < clients.size(); i++){
+            if(clients[i]->getFd()==clientFd){
+                clients.erase(clients.begin()+i);
+            }
+        }
         descr.erase(descr.begin()+index);
         
         shutdown(clientFd, SHUT_RDWR);
         close(clientFd);
     }
+}
+
+void Server::sendMusic(sockaddr_in* ad, std::string name){
+    //NIC
 }

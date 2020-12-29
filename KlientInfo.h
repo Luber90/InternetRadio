@@ -9,6 +9,6 @@ private:
 public:
     KlientInfo(int f, sockaddr_in c);
     int getFd();
-    sockaddr_in getAddr();
+    sockaddr_in* getAddr();
     socklen_t getSize();
 };

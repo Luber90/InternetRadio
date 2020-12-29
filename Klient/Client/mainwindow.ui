@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>408</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="connectGroup">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>351</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="connectButton">
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QTextEdit" name="textEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="radioGroup_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>391</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="radioGroup">
+     <item row="2" column="0">
+      <widget class="QListWidget" name="rooms"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="goButton">
+       <property name="text">
+        <string>Go</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" rowspan="2">
+      <widget class="QGroupBox" name="queueGroup">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="addButton">
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="deleteButton">
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QListWidget" name="queue"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
