@@ -1,6 +1,16 @@
 #include "Server.h"
 
 Server::Server(long p){
+    /*music = new std::ifstream("sad.wav", std::ios::binary);
+    if (*music){
+        printf("blad\n");
+    }*/
+    errno = 0;
+    music = fopen("Serwer/sad.wav", "rb");
+    if(music == NULL){
+        printf("nie\n");
+    }
+    printf("Error %d \n", errno);
     rooms.push_back(new RoomInfo("gierki"));
     rooms.push_back(new RoomInfo("shitpost"));
     rooms.push_back(new RoomInfo("general"));
@@ -55,6 +65,10 @@ void Server::start(){
                 for(long unsigned int k = 0; k < rooms[j]->getFds().size(); k++){
                     if(rooms[j]->getFds()[k]==clients[i]->getFd()){
                         this->sendMusic(clients[i]->getAddr(), rooms[j]->getName());
+                        short bytes[8128];
+                        k = fread(bytes,sizeof(short),2, music);
+                        sendto(udpfd, bytes, k*sizeof(short), 0, (sockaddr*)clients[i]->getAddr(), clients[i]->getSize());
+                        sleep(0.35);
                     }
                 }
             }

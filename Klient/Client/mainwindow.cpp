@@ -33,9 +33,7 @@ void MainWindow::connectBtnHit(){
     connect(sock, &QTcpSocket::readyRead, this, &MainWindow::socketRecive);
     connect(sock, &QTcpSocket::disconnected, this, &MainWindow::socketDisconnect);
     connect(sock, static_cast<void(QTcpSocket::*)(QTcpSocket::SocketError)>(&QTcpSocket::error), this, &MainWindow::socketError);
-    //sock->bind(12346);
     sock->connectToHost("127.0.0.1", 12345);
-    //sock->bind(12346, QAbstractSocket::ReuseAddressHint);
     connTimeoutTimer->start(3000);
 }
 
@@ -47,7 +45,6 @@ void MainWindow::socketError(QTcpSocket::SocketError err){
 }
 
 void MainWindow::socketDisconnect(){
-    QMessageBox::critical(this, "chuj disconnect", sock->errorString());
     ui->textEdit->append("<b>Disconnected</b>");
 }
 
@@ -63,14 +60,12 @@ void MainWindow::goBtnHit(){
 void MainWindow::socketConnected(){
     connTimeoutTimer->stop();
     connTimeoutTimer->deleteLater();
-    //ui->textEdit->append("<b>Connected</b>");
-    ui->textEdit->append(QString::number(sock->localPort()));
+    ui->textEdit->append("<b>Connected</b>");
     ui->radioGroup_2->setEnabled(true);
     ui->connectGroup->setEnabled(false);
     ui->queueGroup->setEnabled(false);
     udpsock = new QUdpSocket();
     udpsock->bind(QHostAddress::LocalHost, sock->localPort(), QAbstractSocket::ShareAddress);
-    //udpsock->connectToHost("127.0.0.1", 12345);
     QAudioFormat format;
     format.setSampleRate(48000);
     format.setChannelCount(1);
@@ -96,7 +91,6 @@ void MainWindow::udpSocketRecive(){
         data.resize(udpsock->pendingDatagramSize());
         udpsock->readDatagram(data.data(), data.size());
         device->write(data.data(), data.size());
-        usleep(162);
     }
 }
 
@@ -122,7 +116,6 @@ void MainWindow::socketRecive(){
                 break;
             }
         }
-        //ui->rooms->addItem(QString::fromStdString(text));
         break;
     case 2:
         text = std::string(&text[6], &text[text.length()]);
@@ -139,8 +132,6 @@ void MainWindow::socketRecive(){
                 }
         break;
     }
-     //       append(QString::fromUtf8(ba).trimmed());
-    //ui->textEdit->setAlignment(Qt::AlignLeft);
 }
 
 int MainWindow::getCmd(std::string cmd){

@@ -14,6 +14,7 @@
 #include <string.h>
 #include "KlientInfo.h"
 #include "RoomInfo.h"
+#include <fstream>
 
 //jeszcze ni uzywane, ale bedzie potrzebne w obiektowosci
 
@@ -30,6 +31,8 @@ private:
     void pollClient(int index);
     void sendMusic(sockaddr_in* ad, std::string name);
     int getCmd(std::string cmd);
+    //std::ifstream *music;
+    FILE *music;
 public:
     Server(long p);
     void start();
