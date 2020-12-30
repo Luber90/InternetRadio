@@ -29,6 +29,7 @@ private:
     void pollServer(int revents);
     void pollClient(int index);
     void sendMusic(sockaddr_in* ad, std::string name);
+    int getCmd(std::string cmd);
 public:
     Server(long p);
     void start();

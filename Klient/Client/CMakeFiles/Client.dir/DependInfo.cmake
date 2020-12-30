@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/Client_autogen/mocs_compilation.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o"
-  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/CMakeFiles/Client.dir/main.cpp.o"
-  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/CMakeFiles/Client.dir/mainwindow.cpp.o"
+  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o"
+  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client.dir/main.cpp.o"
+  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client.dir/mainwindow.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,13 +16,13 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "QT_GUI_LIB"
   "QT_MULTIMEDIA_LIB"
   "QT_NETWORK_LIB"
+  "QT_NO_DEBUG"
   "QT_WIDGETS_LIB"
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
-  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client"
   "Client_autogen/include"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"

@@ -1,6 +1,8 @@
 all: serv client
 
-serv: RadioServer.cpp Server.cpp Server.h RoomInfo.h KlientInfo.h
-	g++ --std=c++17 -Wall -O0 -g -pthread -o serv RoomInfo.cpp KlientInfo.cpp RadioServer.cpp Server.cpp
-client: KlientTest.cpp
-	g++ --std=c++17 -Wall -O0 -g -pthread -o client KlientTest.cpp
+serv: Serwer/RadioServer.cpp Serwer/Server.cpp Serwer/Server.h Serwer/RoomInfo.h Serwer/KlientInfo.h
+	g++ --std=c++17 -Wall -O0 -g -pthread -o serv Serwer/RoomInfo.cpp Serwer/KlientInfo.cpp Serwer/RadioServer.cpp Serwer/Server.cpp
+	
+client: Klient/Client/main.cpp Klient/Client/mainwindow.cpp Klient/Client/mainwindow.h Klient/Client/mainwindow.ui
+	cmake Klient/Client/CMakeLists.txt
+	cp Klient/build-Client-Desktop-Debug/Client client

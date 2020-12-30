@@ -51,7 +51,7 @@ void Server::start(){
             }
         }
         for(long unsigned int i = 0; i < clients.size(); i++){
-            for(long unsigned int j = 0; i < rooms.size(); j++){
+            for(long unsigned int j = 0; j < rooms.size(); j++){
                 for(long unsigned int k = 0; k < rooms[j]->getFds().size(); k++){
                     if(rooms[j]->getFds()[k]==clients[i]->getFd()){
                         this->sendMusic(clients[i]->getAddr(), rooms[j]->getName());
@@ -91,6 +91,7 @@ void Server::pollServer(int revents){
             }
         }
         write(clientFd, ro.c_str(), 255);
+        printf("%d %s\n", clientFd, ro.c_str());
     }
 }
 
@@ -104,7 +105,28 @@ void Server::pollClient(int index){
         if(count < 1)
             revents |= POLLERR;
         else {
-            printf("%s\n", buffer);
+            printf("%d: %s\n", clientFd, buffer);
+            
+            std::string buff = std::string(buffer);
+            int cmd = this->getCmd(buff);
+            std::string msg;
+            std::cout<<"mordoooo"<<std::endl;
+            switch(cmd){
+            case 0:
+                msg = "bad:";
+
+                write(clientFd, msg.c_str(), 255);
+                break;
+            
+            case 1:
+                for(long unsigned int i = 0; i < rooms.size(); i++){
+                    if(std::string(&buff[5], &buff[buff.size()])==rooms[i]->getName()){
+                        rooms[i]->addFd(clientFd);
+                    }
+                }
+                msg = "queue:madonna,sonic";
+                write(clientFd, msg.c_str(), 255);
+            }
             
         }
     }
@@ -125,4 +147,12 @@ void Server::pollClient(int index){
 
 void Server::sendMusic(sockaddr_in* ad, std::string name){
     //NIC
+}
+
+int Server::getCmd(std::string cmd){
+    int index = cmd.find(":");
+    if (std::string(&cmd[0], &cmd[index])=="room"){
+        return 1;
+    }
+    else return 0;
 }

@@ -5,6 +5,7 @@ CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o
  /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.h
  /home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/Client_autogen/EWIEGA46WW/moc_mainwindow.cpp
  /home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/Client_autogen/mocs_compilation.cpp
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
@@ -107,11 +108,25 @@ CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioFormat
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioInput
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioOutput
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudio.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudiodeviceinfo.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudioformat.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudioinput.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudiooutput.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qmultimedia.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qtmultimedia-config.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qtmultimediaglobal.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QTcpSocket
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QUdpSocket
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostaddress.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qudpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
@@ -122,6 +137,7 @@ CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o
 CMakeFiles/Client.dir/main.cpp.o
  /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp
  /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
@@ -228,11 +244,25 @@ CMakeFiles/Client.dir/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioFormat
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioInput
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioOutput
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudio.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudiodeviceinfo.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudioformat.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudioinput.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudiooutput.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qmultimedia.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qtmultimedia-config.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qtmultimediaglobal.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QTcpSocket
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QUdpSocket
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostaddress.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qudpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
@@ -246,6 +276,7 @@ CMakeFiles/Client.dir/main.cpp.o
 CMakeFiles/Client.dir/mainwindow.cpp.o
  /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp
  /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
@@ -362,16 +393,31 @@ CMakeFiles/Client.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioFormat
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioInput
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/QAudioOutput
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudio.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudiodeviceinfo.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudioformat.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudioinput.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qaudiooutput.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qmultimedia.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qtmultimedia-config.h
+ /usr/include/x86_64-linux-gnu/qt5/QtMultimedia/qtmultimediaglobal.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QTcpSocket
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QUdpSocket
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostaddress.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qudpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGroupBox
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QListWidget
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTextEdit
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
@@ -384,6 +430,7 @@ CMakeFiles/Client.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgroupbox.h
@@ -392,6 +439,7 @@ CMakeFiles/Client.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistview.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistwidget.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h

@@ -48,7 +48,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         connectGroup = new QGroupBox(centralwidget);
         connectGroup->setObjectName(QString::fromUtf8("connectGroup"));
-        connectGroup->setGeometry(QRect(30, 0, 351, 81));
+        connectGroup->setGeometry(QRect(30, 0, 351, 101));
         connectGroup->setCheckable(false);
         gridLayout = new QGridLayout(connectGroup);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));

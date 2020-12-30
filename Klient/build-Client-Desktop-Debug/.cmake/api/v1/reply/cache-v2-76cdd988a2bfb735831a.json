@@ -1170,6 +1170,18 @@
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui"
 		},
 		{
+			"name" : "Qt5Multimedia_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt5Multimedia."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Multimedia"
+		},
+		{
 			"name" : "Qt5Network_DIR",
 			"properties" : 
 			[
@@ -1180,6 +1192,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Network"
+		},
+		{
+			"name" : "Qt5QDebug_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt5QDebug."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Qt5QDebug_DIR-NOTFOUND"
 		},
 		{
 			"name" : "Qt5Widgets_DIR",

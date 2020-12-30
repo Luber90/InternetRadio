@@ -220,6 +220,7 @@
 #define __UINTMAX_C(c) c ## UL
 #define __GLIBCXX_BITSIZE_INT_N_0 128
 #define __k8 1
+#define QT_MULTIMEDIA_LIB 1
 #define __SIG_ATOMIC_MAX__ 0x7fffffff
 #define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
 #define __SIZEOF_PTRDIFF_T__ 8
