@@ -10,11 +10,12 @@
 #include <QtMultimedia/QAudioFormat>
 #include <QTimer>
 #include <string>
+#include <iostream>
 #include <unistd.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-
+enum Cmd {czero, crooms, cqueue, chide, cloop};
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -35,8 +36,15 @@ protected:
     void socketDisconnect();
     void socketError(QTcpSocket::SocketError err);
 
+    void songUp();
+    void songDown();
+    void muteChange();
+    void hideChange();
+    void loopChange();
+    void randomChange();
     int getCmd(std::string cmd);
 private:
+    std::string currRoom;
     QAudioOutput *output;
     QIODevice *device;
     Ui::MainWindow *ui;

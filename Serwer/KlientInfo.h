@@ -6,8 +6,11 @@ private:
     int fd;
     sockaddr_in clientAddr{};
     socklen_t clientAddrSize = sizeof(clientAddr);
+    bool mute;
 public:
     KlientInfo(int f, sockaddr_in c);
+    void chngMute();
+    bool getMute();
     int getFd();
     sockaddr_in* getAddr();
     socklen_t getSize();

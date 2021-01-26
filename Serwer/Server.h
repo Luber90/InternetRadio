@@ -12,11 +12,16 @@
 #include <poll.h>
 #include <vector>
 #include <string.h>
-#include "KlientInfo.h"
 #include "RoomInfo.h"
 #include <fstream>
+#include <mutex>
+#include <algorithm>
+
+enum Cmd {czero, croom, cup, cdown, cmute, cloop, crandom, chide};
 
 //jeszcze ni uzywane, ale bedzie potrzebne w obiektowosci
+
+void sndMusic(FILE *music, std::vector<KlientInfo*> clients, std::vector<RoomInfo*> rooms, int udpfd);
 
 class Server{
 private:
@@ -29,10 +34,10 @@ private:
     std::vector<RoomInfo*> rooms;
     void pollServer(int revents);
     void pollClient(int index);
+    void sndMusic();
     void sendMusic(sockaddr_in* ad, std::string name);
-    int getCmd(std::string cmd);
-    //std::ifstream *music;
-    FILE *music;
+    Cmd getCmd(std::string cmd);
+    std::mutex delMtx;
 public:
     Server(long p);
     void start();

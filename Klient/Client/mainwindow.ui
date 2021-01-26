@@ -48,13 +48,10 @@
       <x>10</x>
       <y>90</y>
       <width>391</width>
-      <height>261</height>
+      <height>291</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="radioGroup">
-     <item row="2" column="0">
-      <widget class="QListWidget" name="rooms"/>
-     </item>
      <item row="3" column="0">
       <widget class="QPushButton" name="goButton">
        <property name="text">
@@ -62,28 +59,59 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1" rowspan="2">
+     <item row="0" column="1" rowspan="4">
       <widget class="QGroupBox" name="queueGroup">
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="1" column="0">
-         <widget class="QPushButton" name="addButton">
+         <widget class="QPushButton" name="hideButton">
           <property name="text">
-           <string>Add</string>
+           <string>Hide</string>
           </property>
          </widget>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QListWidget" name="queue"/>
         </item>
         <item row="1" column="1">
-         <widget class="QPushButton" name="deleteButton">
+         <widget class="QPushButton" name="upButton">
           <property name="text">
-           <string>Delete</string>
+           <string>^</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QListWidget" name="queue"/>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="muteButton">
+          <property name="text">
+           <string>Mute</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="downButton">
+          <property name="text">
+           <string>v</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="loopButton">
+          <property name="text">
+           <string>Loop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="randomButton">
+          <property name="text">
+           <string>Rnd</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
+     </item>
+     <item row="0" column="0" rowspan="3">
+      <widget class="QListWidget" name="rooms"/>
      </item>
     </layout>
    </widget>

@@ -60,41 +60,41 @@ include CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o: Client_autogen/mocs_compilation.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o -c /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o -c /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp
 
 CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp > CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp > CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp -o CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp -o CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/Client.dir/main.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/main.cpp.o: main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Client.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/main.cpp.o -c /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/main.cpp.o -c /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp
 
 CMakeFiles/Client.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp > CMakeFiles/Client.dir/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp > CMakeFiles/Client.dir/main.cpp.i
 
 CMakeFiles/Client.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp -o CMakeFiles/Client.dir/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp -o CMakeFiles/Client.dir/main.cpp.s
 
 CMakeFiles/Client.dir/mainwindow.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/mainwindow.cpp.o: mainwindow.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Client.dir/mainwindow.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/mainwindow.cpp.o -c /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/mainwindow.cpp.o -c /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp
 
 CMakeFiles/Client.dir/mainwindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/mainwindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp > CMakeFiles/Client.dir/mainwindow.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp > CMakeFiles/Client.dir/mainwindow.cpp.i
 
 CMakeFiles/Client.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/mainwindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp -o CMakeFiles/Client.dir/mainwindow.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp -o CMakeFiles/Client.dir/mainwindow.cpp.s
 
 # Object files for target Client
 Client_OBJECTS = \

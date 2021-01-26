@@ -31,13 +31,17 @@ public:
     QTextEdit *textEdit;
     QGroupBox *radioGroup_2;
     QGridLayout *radioGroup;
-    QListWidget *rooms;
     QPushButton *goButton;
     QGroupBox *queueGroup;
     QGridLayout *gridLayout_2;
-    QPushButton *addButton;
-    QPushButton *deleteButton;
+    QPushButton *hideButton;
     QListWidget *queue;
+    QPushButton *upButton;
+    QPushButton *muteButton;
+    QPushButton *downButton;
+    QPushButton *loopButton;
+    QPushButton *randomButton;
+    QListWidget *rooms;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -65,14 +69,9 @@ public:
         radioGroup_2 = new QGroupBox(centralwidget);
         radioGroup_2->setObjectName(QString::fromUtf8("radioGroup_2"));
         radioGroup_2->setEnabled(false);
-        radioGroup_2->setGeometry(QRect(10, 90, 391, 261));
+        radioGroup_2->setGeometry(QRect(10, 90, 391, 291));
         radioGroup = new QGridLayout(radioGroup_2);
         radioGroup->setObjectName(QString::fromUtf8("radioGroup"));
-        rooms = new QListWidget(radioGroup_2);
-        rooms->setObjectName(QString::fromUtf8("rooms"));
-
-        radioGroup->addWidget(rooms, 2, 0, 1, 1);
-
         goButton = new QPushButton(radioGroup_2);
         goButton->setObjectName(QString::fromUtf8("goButton"));
 
@@ -82,23 +81,48 @@ public:
         queueGroup->setObjectName(QString::fromUtf8("queueGroup"));
         gridLayout_2 = new QGridLayout(queueGroup);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        addButton = new QPushButton(queueGroup);
-        addButton->setObjectName(QString::fromUtf8("addButton"));
+        hideButton = new QPushButton(queueGroup);
+        hideButton->setObjectName(QString::fromUtf8("hideButton"));
 
-        gridLayout_2->addWidget(addButton, 1, 0, 1, 1);
-
-        deleteButton = new QPushButton(queueGroup);
-        deleteButton->setObjectName(QString::fromUtf8("deleteButton"));
-
-        gridLayout_2->addWidget(deleteButton, 1, 1, 1, 1);
+        gridLayout_2->addWidget(hideButton, 1, 0, 1, 1);
 
         queue = new QListWidget(queueGroup);
         queue->setObjectName(QString::fromUtf8("queue"));
 
-        gridLayout_2->addWidget(queue, 0, 0, 1, 2);
+        gridLayout_2->addWidget(queue, 0, 0, 1, 3);
+
+        upButton = new QPushButton(queueGroup);
+        upButton->setObjectName(QString::fromUtf8("upButton"));
+
+        gridLayout_2->addWidget(upButton, 1, 1, 1, 1);
+
+        muteButton = new QPushButton(queueGroup);
+        muteButton->setObjectName(QString::fromUtf8("muteButton"));
+
+        gridLayout_2->addWidget(muteButton, 3, 0, 1, 1);
+
+        downButton = new QPushButton(queueGroup);
+        downButton->setObjectName(QString::fromUtf8("downButton"));
+
+        gridLayout_2->addWidget(downButton, 3, 1, 1, 1);
+
+        loopButton = new QPushButton(queueGroup);
+        loopButton->setObjectName(QString::fromUtf8("loopButton"));
+
+        gridLayout_2->addWidget(loopButton, 4, 0, 1, 1);
+
+        randomButton = new QPushButton(queueGroup);
+        randomButton->setObjectName(QString::fromUtf8("randomButton"));
+
+        gridLayout_2->addWidget(randomButton, 4, 1, 1, 1);
 
 
-        radioGroup->addWidget(queueGroup, 2, 1, 2, 1);
+        radioGroup->addWidget(queueGroup, 0, 1, 4, 1);
+
+        rooms = new QListWidget(radioGroup_2);
+        rooms->setObjectName(QString::fromUtf8("rooms"));
+
+        radioGroup->addWidget(rooms, 0, 0, 3, 1);
 
         MainWindow->setCentralWidget(centralwidget);
 
@@ -112,8 +136,12 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         connectButton->setText(QApplication::translate("MainWindow", "Connect", nullptr));
         goButton->setText(QApplication::translate("MainWindow", "Go", nullptr));
-        addButton->setText(QApplication::translate("MainWindow", "Add", nullptr));
-        deleteButton->setText(QApplication::translate("MainWindow", "Delete", nullptr));
+        hideButton->setText(QApplication::translate("MainWindow", "Hide", nullptr));
+        upButton->setText(QApplication::translate("MainWindow", "^", nullptr));
+        muteButton->setText(QApplication::translate("MainWindow", "Mute", nullptr));
+        downButton->setText(QApplication::translate("MainWindow", "v", nullptr));
+        loopButton->setText(QApplication::translate("MainWindow", "Loop", nullptr));
+        randomButton->setText(QApplication::translate("MainWindow", "Rnd", nullptr));
     } // retranslateUi
 
 };

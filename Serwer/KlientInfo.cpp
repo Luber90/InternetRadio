@@ -3,6 +3,7 @@
 KlientInfo::KlientInfo(int f, sockaddr_in c){
     fd = f;
     clientAddr = c;
+    mute = false;
     clientAddrSize = sizeof(clientAddr);
 }
 int KlientInfo::getFd(){
@@ -13,4 +14,10 @@ sockaddr_in* KlientInfo::getAddr(){
 }
 socklen_t KlientInfo::getSize(){
     return clientAddrSize;
+}
+void KlientInfo::chngMute(){
+    mute = !mute;
+}
+bool KlientInfo::getMute(){
+    return mute;
 }
