@@ -1,5 +1,7 @@
 #include <string>
 
+//jest do "czesc" listy jednokierunkowej z piosenkami
+
 class Queue{
 public:
     Queue(std::string n);

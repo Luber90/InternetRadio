@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->hideButton, &QPushButton::clicked, this, &MainWindow::hideChange);
     connect(ui->loopButton, &QPushButton::clicked, this, &MainWindow::loopChange);
     connect(ui->randomButton, &QPushButton::clicked, this, &MainWindow::randomChange);
+    connect(ui->skipButton, &QPushButton::clicked, this, &MainWindow::skip);
 }
 
 MainWindow::~MainWindow()
@@ -25,7 +26,6 @@ MainWindow::~MainWindow()
 void MainWindow::connectBtnHit(){
     sock = new QTcpSocket(this);
     sock->socketOption(QAbstractSocket::KeepAliveOption);
-    sock->bind(QAbstractSocket::ShareAddress);
     connTimeoutTimer = new QTimer(this);
     connTimeoutTimer->setSingleShot(true);
     connect(connTimeoutTimer, &QTimer::timeout, [&]{
@@ -38,19 +38,26 @@ void MainWindow::connectBtnHit(){
     connect(sock, &QTcpSocket::readyRead, this, &MainWindow::socketRecive);
     connect(sock, &QTcpSocket::disconnected, this, &MainWindow::socketDisconnect);
     connect(sock, static_cast<void(QTcpSocket::*)(QTcpSocket::SocketError)>(&QTcpSocket::error), this, &MainWindow::socketError);
-    sock->connectToHost(ui->textEdit->toPlainText(), 12345);
+    std::string text = ui->textEdit->toPlainText().toStdString();
+    sock->connectToHost(QString::fromStdString(text.substr(0, text.find(":"))), std::stoi(text.substr(text.find(":")+1)));
     connTimeoutTimer->start(3000);
 }
 
 void MainWindow::socketError(QTcpSocket::SocketError err){
     if(err == QTcpSocket::RemoteHostClosedError)
         return;
+    ui->connectGroup->setEnabled(false);
+    ui->radioGroup_2->setEnabled(false);
     QMessageBox::critical(this, "Error", sock->errorString());
-    ui->textEdit->append("<b>Socket error: "+sock->errorString()+"</b>");
+
+    //ui->textEdit->append("<b>Socket error: "+sock->errorString()+"</b>");
 }
 
 void MainWindow::socketDisconnect(){
-    ui->textEdit->append("<b>Disconnected</b>");
+    ui->connectGroup->setEnabled(false);
+    ui->radioGroup_2->setEnabled(false);
+    QMessageBox::critical(this, "Error", "<b>Disconnected</b>");
+    //ui->textEdit->append("<b>Disconnected</b>");
 }
 
 void MainWindow::goBtnHit(){
@@ -71,7 +78,7 @@ void MainWindow::socketConnected(){
     ui->connectGroup->setEnabled(false);
     ui->queueGroup->setEnabled(false);
     udpsock = new QUdpSocket();
-    udpsock->bind(QHostAddress::LocalHost, sock->localPort(), QAbstractSocket::ShareAddress);
+    udpsock->bind(sock->localAddress(), sock->localPort(), QAbstractSocket::ShareAddress);
     QAudioFormat format;
     format.setSampleRate(48000);
     format.setChannelCount(1);
@@ -109,10 +116,12 @@ void MainWindow::socketRecive(){
     int command = this->getCmd(text);
     switch(command){
     case czero:
-        ui->textEdit->append("Bad request");
+        QMessageBox::critical(this, "Error", "<b>Bad request error.</b>");
+        //ui->textEdit->append("Bad request");
         break;
     case crooms:
-        text = std::string(&text[6], &text[text.length()]);
+        //text = std::string(&text[6], &text[text.length()]);
+        text = text.substr(6);
         while(true){
             std::size_t found = text.find(",");
             if(found!=std::string::npos){
@@ -126,20 +135,50 @@ void MainWindow::socketRecive(){
         }
         break;
     case cqueue:
+    {
         text = std::string(&text[6], &text[text.length()]);
         ui->queue->clear();
+        int ile = 0;
                 while(true){
                     std::size_t found = text.find(",");
                     if(found!=std::string::npos){
-                        ui->queue->addItem(QString::fromStdString(std::string(&text[0], &text[found])));
+                        std::size_t sred= text.find(";"), wykrz = text.find("!");
+                        ui->queue->addItem(QString::fromStdString(std::string(&text[0], &text[sred])));
+                        if(text.substr(sred+1, 3)=="yes"){
+                            ui->queue->item(ile)->setTextColor(Qt::black);
+                        }
+                        else{
+                            ui->queue->item(ile)->setTextColor(Qt::gray);
+                        }
+                        if(text.substr(wykrz+1, 3)=="yes"){
+                            ui->queue->item(ile)->setBackgroundColor(Qt::gray);
+                        }
+                        else{
+                            ui->queue->item(ile)->setBackgroundColor(Qt::green);
+                        }
                         text = std::string(&text[found+1], &text[text.length()]);
+                        ile++;
                     }
                     else {
-                        ui->queue->addItem(QString::fromStdString(text));
+                        std::size_t sred= text.find(";"), wykrz = text.find("!");
+                        ui->queue->addItem(QString::fromStdString(std::string(&text[0], &text[sred])));
+                        if(text.substr(sred+1, 3)=="yes"){
+                            ui->queue->item(ile)->setTextColor(Qt::black);
+                        }
+                        else{
+                            ui->queue->item(ile)->setTextColor(Qt::gray);
+                        }
+                        if(text.substr(wykrz+1, 3)=="yes"){
+                            ui->queue->item(ile)->setBackgroundColor(Qt::gray);
+                        }
+                        else{
+                            ui->queue->item(ile)->setBackgroundColor(Qt::green);
+                        }
                         break;
                     }
                 }
         break;
+    }
     case chide:
         std::cout<<"hide"<<std::endl;
         for(int i = 0; i < ui->queue->count(); i++){
@@ -206,6 +245,11 @@ void MainWindow::loopChange(){
 
 void MainWindow::randomChange(){
     std::string s = "random:"+currRoom+";";
+    sock->write(s.c_str());
+}
+
+void MainWindow::skip(){
+    std::string s = "skip:"+currRoom;
     sock->write(s.c_str());
 }
 

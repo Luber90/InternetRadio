@@ -42,6 +42,7 @@ protected:
     void hideChange();
     void loopChange();
     void randomChange();
+    void skip();
     int getCmd(std::string cmd);
 private:
     std::string currRoom;

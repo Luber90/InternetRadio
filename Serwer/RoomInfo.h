@@ -4,6 +4,8 @@
 #include "Queue.h"
 #include <chrono>
 
+
+//przechowuje informacje o pokoju, klientach w pokoju, czasie i zarzadza piosenkami
 class RoomInfo{
 public:
     RoomInfo(std::string n, Queue* c);

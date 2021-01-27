@@ -1,6 +1,8 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
+//przechowuje informacje o kliencie
+
 class KlientInfo{
 private:
     int fd;

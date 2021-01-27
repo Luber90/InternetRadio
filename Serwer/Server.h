@@ -16,18 +16,24 @@
 #include <fstream>
 #include <mutex>
 #include <algorithm>
+#include <climits>
 
-enum Cmd {czero, croom, cup, cdown, cmute, cloop, crandom, chide};
-
-//jeszcze ni uzywane, ale bedzie potrzebne w obiektowosci
+enum Cmd {czero, croom, cup, cdown, cmute, cloop, crandom, chide, cskip};
 
 void sndMusic(FILE *music, std::vector<KlientInfo*> clients, std::vector<RoomInfo*> rooms, int udpfd);
+
+struct mess{
+    std::string msg;
+    int fd;
+    int wyslano;
+};
+
 
 class Server{
 private:
     long port;
     std::vector<pollfd> descr;
-    char roomss[255] = "rooms:gierki,shitpost,general";
+    std::vector<mess> m;
     sockaddr_in myAddr {};
     int tcpfd, udpfd;
     std::vector<KlientInfo*> clients;
@@ -35,9 +41,10 @@ private:
     void pollServer(int revents);
     void pollClient(int index);
     void sndMusic();
-    void sendMusic(sockaddr_in* ad, std::string name);
     Cmd getCmd(std::string cmd);
+    void sndMess();
     std::mutex delMtx;
+    std::mutex msgMtx;
 public:
     Server(long p);
     void start();
