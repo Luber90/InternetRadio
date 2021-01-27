@@ -33,7 +33,7 @@ Server::Server(long p){
     //tworzenie socketow udp i tcp
     port = p;
     myAddr.sin_family = AF_INET;
-    myAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    myAddr.sin_addr.s_addr = inet_addr("10.0.2.15");
     myAddr.sin_port = htons((uint16_t)port);
     
     tcpfd = socket(AF_INET, SOCK_STREAM, 0);

@@ -55,7 +55,7 @@ include CMakeFiles/Client_autogen.dir/progress.make
 
 CMakeFiles/Client_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target Client"
-	/usr/bin/cmake -E cmake_autogen /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E cmake_autogen /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir/AutogenInfo.json Debug
 
 Client_autogen: CMakeFiles/Client_autogen
 Client_autogen: CMakeFiles/Client_autogen.dir/build.make
