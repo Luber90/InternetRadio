@@ -15,7 +15,7 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-enum Cmd {czero, crooms, cqueue, chide, cloop};
+enum Cmd {czero, crooms, cqueue, chide, cloop, ccurr};
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
