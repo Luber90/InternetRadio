@@ -47,6 +47,7 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
 					<Add option="-DQT_NETWORK_LIB"/>
 					<Add option="-DQT_MULTIMEDIA_LIB"/>
 					<Add directory="/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client"/>
@@ -83,6 +84,7 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
 					<Add option="-DQT_NETWORK_LIB"/>
 					<Add option="-DQT_MULTIMEDIA_LIB"/>
 					<Add directory="/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client"/>
