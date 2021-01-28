@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client
+CMAKE_SOURCE_DIR = /home/osboxes/Desktop/ll/InternetRadio/Klient/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client
+CMAKE_BINARY_DIR = /home/osboxes/Desktop/ll/InternetRadio/Klient/Client
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -75,14 +75,14 @@ clean: CMakeFiles/Client_autogen.dir/clean
 CMakeFiles/Client.dir/all: CMakeFiles/Client_autogen.dir/all
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/depend
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles --progress-num=1,2,3,4 "Built target Client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles --progress-num=1,2,3,4 "Built target Client"
 .PHONY : CMakeFiles/Client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles 0
 .PHONY : CMakeFiles/Client.dir/rule
 
 # Convenience name for target.
@@ -102,14 +102,14 @@ CMakeFiles/Client.dir/clean:
 CMakeFiles/Client_autogen.dir/all:
 	$(MAKE) -f CMakeFiles/Client_autogen.dir/build.make CMakeFiles/Client_autogen.dir/depend
 	$(MAKE) -f CMakeFiles/Client_autogen.dir/build.make CMakeFiles/Client_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles --progress-num=5 "Built target Client_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles --progress-num=5 "Built target Client_autogen"
 .PHONY : CMakeFiles/Client_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Client_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Client_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles 0
 .PHONY : CMakeFiles/Client_autogen.dir/rule
 
 # Convenience name for target.

@@ -6,33 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/EWIEGA46WW/moc_mainwindow.cpp
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/Client_autogen/EWIEGA46WW/moc_mainwindow.cpp
+memory
+-
 mainwindow.h
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/EWIEGA46WW/mainwindow.h
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/Client_autogen/EWIEGA46WW/mainwindow.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp
 EWIEGA46WW/moc_mainwindow.cpp
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/EWIEGA46WW/moc_mainwindow.cpp
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/Client_autogen/EWIEGA46WW/moc_mainwindow.cpp
 
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/main.cpp
 mainwindow.h
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.h
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/mainwindow.h
 QApplication
 -
 
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/mainwindow.cpp
 mainwindow.h
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.h
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/mainwindow.h
 ./ui_mainwindow.h
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/ui_mainwindow.h
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/ui_mainwindow.h
 QMessageBox
 -
 
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.h
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/mainwindow.h
 QMainWindow
 -
 QTcpSocket

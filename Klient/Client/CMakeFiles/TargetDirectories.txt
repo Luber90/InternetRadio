@@ -1,4 +1,4 @@
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/rebuild_cache.dir
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/edit_cache.dir
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client.dir
-/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/rebuild_cache.dir
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/Client.dir
+/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir

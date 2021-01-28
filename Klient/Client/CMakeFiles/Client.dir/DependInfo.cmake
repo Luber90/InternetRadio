@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o"
-  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/main.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client.dir/main.cpp.o"
-  "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/mainwindow.cpp" "/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client.dir/mainwindow.cpp.o"
+  "/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/Client_autogen/mocs_compilation.cpp" "/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o"
+  "/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/main.cpp" "/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/Client.dir/main.cpp.o"
+  "/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/mainwindow.cpp" "/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/Client.dir/mainwindow.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

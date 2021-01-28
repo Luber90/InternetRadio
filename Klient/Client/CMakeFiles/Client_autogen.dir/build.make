@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client
+CMAKE_SOURCE_DIR = /home/osboxes/Desktop/ll/InternetRadio/Klient/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client
+CMAKE_BINARY_DIR = /home/osboxes/Desktop/ll/InternetRadio/Klient/Client
 
 # Utility rule file for Client_autogen.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client
 include CMakeFiles/Client_autogen.dir/progress.make
 
 CMakeFiles/Client_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target Client"
-	/usr/bin/cmake -E cmake_autogen /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir/AutogenInfo.json ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target Client"
+	/usr/bin/cmake -E cmake_autogen /home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir/AutogenInfo.json ""
 
 Client_autogen: CMakeFiles/Client_autogen
 Client_autogen: CMakeFiles/Client_autogen.dir/build.make
@@ -72,6 +72,6 @@ CMakeFiles/Client_autogen.dir/clean:
 .PHONY : CMakeFiles/Client_autogen.dir/clean
 
 CMakeFiles/Client_autogen.dir/depend:
-	cd /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client /home/osboxes/Desktop/SK2/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/osboxes/Desktop/ll/InternetRadio/Klient/Client && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Desktop/ll/InternetRadio/Klient/Client /home/osboxes/Desktop/ll/InternetRadio/Klient/Client /home/osboxes/Desktop/ll/InternetRadio/Klient/Client /home/osboxes/Desktop/ll/InternetRadio/Klient/Client /home/osboxes/Desktop/ll/InternetRadio/Klient/Client/CMakeFiles/Client_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Client_autogen.dir/depend
 
