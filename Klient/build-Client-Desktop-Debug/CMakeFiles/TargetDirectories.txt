@@ -1,0 +1,4 @@
+/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/CMakeFiles/Client.dir
+/home/osboxes/Desktop/SK2/InternetRadio/Klient/build-Client-Desktop-Debug/CMakeFiles/Client_autogen.dir
