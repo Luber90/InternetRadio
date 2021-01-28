@@ -33,7 +33,7 @@ Server::Server(long p){
     //tworzenie socketow udp i tcp
     port = p;
     myAddr.sin_family = AF_INET;
-    myAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    myAddr.sin_addr.s_addr = inet_addr("10.0.2.15");
     myAddr.sin_port = htons((uint16_t)port);
     
     tcpfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -128,15 +128,18 @@ void Server::sndMusic(){
             if(rooms[j]->getUsrNumber()>0){
                 //jesli nastepna probka juz miala byc
                 if(rooms[j]->getNextSample()<=time_point_cast<nanoseconds>(system_clock::now())){
+                    bool changed = false;
                     short bytes[256];
                     int ile = fread(bytes,sizeof(short),sizeof(bytes), rooms[j]->getMusic());
                     if(ile == 0){
                         if(!rooms[j]->getRandom()){
                             rooms[j]->nxtMusic();
+                            changed = true;
                             ile = fread(bytes,sizeof(short),sizeof(bytes), rooms[j]->getMusic());
                         }
                         else{
                             rooms[j]->RndMusic();
+                            changed = true;
                             ile = fread(bytes,sizeof(short),sizeof(bytes), rooms[j]->getMusic());
                         }
                         
@@ -145,6 +148,13 @@ void Server::sndMusic(){
                     rooms[j]->setLastSample(time_point_cast<nanoseconds>(system_clock::now()));
                     rooms[j]->setNextSample(time_point_cast<nanoseconds>(system_clock::now()) + nanoseconds(ile*20833));
                     for(long unsigned k = 0; k < rooms[j]->getUsrNumber(); k++){
+                        if(changed){
+                            mess msg;
+                            msg.msg = "curr:"+rooms[j]->getCurr()->getName();
+                            msg.fd = rooms[j]->getClients()[k]->getFd();
+                            msg.wyslano = 0;
+                            m.push_back(msg);
+                        }
                         if(!rooms[j]->getClients()[k]->getMute()){
                             sendto(udpfd, bytes, ile*sizeof(short), 0, (sockaddr*)rooms[j]->getClients()[k]->getAddr(), rooms[j]->getClients()[k]->getSize());
                         }
@@ -264,6 +274,7 @@ void Server::pollClient(int index){
                                     msg += ","+tmp->getName()+";"+(tmp->getActive() ? "yes" : "noo")+"!"+(tmp->getLoop() ? "yes" : "noo");
                                     tmp = tmp->ggetNext();
                                 }
+                                msg += "?"+rooms[i]->getCurr()->getName();
                                 std::cout<<clientFd<<" "<<msg<<std::endl;
                                 wiad.fd = clientFd;
                                 wiad.msg = msg;
@@ -310,6 +321,7 @@ void Server::pollClient(int index){
                         msg += ","+tmp->getName()+";"+(tmp->getActive() ? "yes" : "noo")+"!"+(tmp->getLoop() ? "yes" : "noo");
                         tmp = tmp->ggetNext();
                     }
+                    msg += "?"+rooms[i]->getCurr()->getName();
                     std::cout<<clientFd<<" "<<msg<<std::endl;
                     wiad.fd = clientFd;
                     wiad.msg = msg;
@@ -337,6 +349,7 @@ void Server::pollClient(int index){
                         msg += ","+tmp->getName()+";"+(tmp->getActive() ? "yes" : "noo")+"!"+(tmp->getLoop() ? "yes" : "noo");
                         tmp = tmp->ggetNext();
                     }
+                    msg += "?"+rooms[i]->getCurr()->getName();
                     std::cout<<clientFd<<" "<<msg<<std::endl;
                     wiad.fd = clientFd;
                     wiad.msg = msg;

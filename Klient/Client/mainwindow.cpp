@@ -79,6 +79,8 @@ void MainWindow::socketConnected(){
     ui->queueGroup->setEnabled(false);
     udpsock = new QUdpSocket();
     udpsock->bind(sock->localAddress(), sock->localPort(), QAbstractSocket::ShareAddress);
+    std::cout<<"tcp"<<sock->localAddress().toString().toStdString()<<sock->localPort()<<std::endl;
+    std::cout<<"udp"<<udpsock->localAddress().toString().toStdString()<<udpsock->localPort()<<std::endl;
     QAudioFormat format;
     format.setSampleRate(48000);
     format.setChannelCount(1);
@@ -142,7 +144,7 @@ void MainWindow::socketRecive(){
                 while(true){
                     std::size_t found = text.find(",");
                     if(found!=std::string::npos){
-                        std::size_t sred= text.find(";"), wykrz = text.find("!");
+                        std::size_t sred= text.find(";"), wykrz = text.find("!"), zap = text.find("?");
                         ui->queue->addItem(QString::fromStdString(std::string(&text[0], &text[sred])));
                         if(text.substr(sred+1, 3)=="yes"){
                             ui->queue->item(ile)->setTextColor(Qt::black);
@@ -151,16 +153,19 @@ void MainWindow::socketRecive(){
                             ui->queue->item(ile)->setTextColor(Qt::gray);
                         }
                         if(text.substr(wykrz+1, 3)=="yes"){
-                            ui->queue->item(ile)->setBackgroundColor(Qt::gray);
+                            ui->queue->item(ile)->setBackgroundColor(Qt::green);
                         }
                         else{
-                            ui->queue->item(ile)->setBackgroundColor(Qt::green);
+                            ui->queue->item(ile)->setBackgroundColor(Qt::white);
+                        }
+                        if(std::string(&text[0], &text[sred])==text.substr(zap+1)){
+                            ui->queue->item(ile)->setTextAlignment(Qt::AlignRight);
                         }
                         text = std::string(&text[found+1], &text[text.length()]);
                         ile++;
                     }
                     else {
-                        std::size_t sred= text.find(";"), wykrz = text.find("!");
+                        std::size_t sred= text.find(";"), wykrz = text.find("!"), zap = text.find("?");
                         ui->queue->addItem(QString::fromStdString(std::string(&text[0], &text[sred])));
                         if(text.substr(sred+1, 3)=="yes"){
                             ui->queue->item(ile)->setTextColor(Qt::black);
@@ -169,14 +174,29 @@ void MainWindow::socketRecive(){
                             ui->queue->item(ile)->setTextColor(Qt::gray);
                         }
                         if(text.substr(wykrz+1, 3)=="yes"){
-                            ui->queue->item(ile)->setBackgroundColor(Qt::gray);
+                            ui->queue->item(ile)->setBackgroundColor(Qt::green);
                         }
                         else{
-                            ui->queue->item(ile)->setBackgroundColor(Qt::green);
+                            ui->queue->item(ile)->setBackgroundColor(Qt::white);
+                        }
+                        if(std::string(&text[0], &text[sred])==text.substr(zap+1)){
+                            ui->queue->item(ile)->setTextAlignment(Qt::AlignRight);
                         }
                         break;
                     }
                 }
+        break;
+    }
+    case ccurr:{
+        std::size_t dwu= text.find(":");
+        for(int i = 0; i < ui->queue->count(); i++){
+            if(ui->queue->item(i)->text().toStdString()==text.substr(dwu+1)){
+                ui->queue->item(i)->setTextAlignment(Qt::AlignRight);
+            }
+            else{
+                ui->queue->item(i)->setTextAlignment(Qt::AlignLeft);
+            }
+        }
         break;
     }
     case chide:
@@ -197,7 +217,7 @@ void MainWindow::socketRecive(){
         for(int i = 0; i < ui->queue->count(); i++){
             if(ui->queue->item(i)->text().toStdString()==text.substr(5, text.find(";")-5)){
                 if(text.substr(text.find(";")+1)=="yes"){
-                    ui->queue->item(i)->setBackgroundColor(Qt::gray);
+                    ui->queue->item(i)->setBackgroundColor(Qt::green);
                 }
                 else{
                     ui->queue->item(i)->setBackgroundColor(Qt::white);
@@ -266,6 +286,9 @@ int MainWindow::getCmd(std::string cmd){
     }
     else if(std::string(&cmd[0], &cmd[index])=="loop"){
         return cloop;
+    }
+    else if(std::string(&cmd[0], &cmd[index])=="curr"){
+        return ccurr;
     }
     else return czero;
 }
